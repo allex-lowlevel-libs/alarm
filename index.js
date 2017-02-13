@@ -73,6 +73,8 @@ function createAlarm(isArray,isFunction){
     setTimeout(this.cronJob.bind(this),this.job_interval);
   };
 
+  return Alarm;
+
 }
 
 module.exports = createAlarm;
