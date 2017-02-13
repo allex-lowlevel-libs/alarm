@@ -46,7 +46,10 @@ function createAlarm(isArray,isFunction){
 
   Alarm.prototype.checkIfExecutionTime = function(cb,time){
     if (checkTime(this.job_interval,time) === 1){
+      console.log('VREME JE ZOVEM CB!',cb);
       cb();
+    }else{
+      console.log('NIJE JOS VREME!');
     }
   };
 
@@ -57,14 +60,17 @@ function createAlarm(isArray,isFunction){
      if (!isFunction(reminder.cb)){
        throw new Error('cb field must be a function!');
      }
+     console.log('EVO REMINDERS.HOURS',reminder.hours);
      reminder.hours.forEach(this.checkIfExecutionTime.bind(reminder.cb));
   };
 
   Alarm.prototype.executeReminders = function(){
+    console.log('CUKA BRE, EVO REMINDERA',this.reminders);
     this.reminders.forEach(this.onReminderExecution.bind(this));
   };
 
   Alarm.prototype.cronJob = function(){
+    console.log('JEL UDJE IKAD OVDE??');
     this.executeReminders();
     this.doCronJob();
   };
