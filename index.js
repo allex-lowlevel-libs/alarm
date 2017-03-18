@@ -57,7 +57,7 @@ function createAlarm(isArray,isFunction){
      if (!isFunction(reminder.cb)){
        throw new Error('cb field must be a function!');
      }
-     reminder.hours.forEach(this.checkIfExecutionTime.bind(reminder.cb));
+     reminder.hours.forEach(this.checkIfExecutionTime.bind(this,reminder.cb));
   };
 
   Alarm.prototype.executeReminders = function(){
