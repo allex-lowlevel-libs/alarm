@@ -30,7 +30,6 @@ function createAlarm(isArray,isFunction){
   };
 
   function checkTime(delta,milestone){
-    return 1; //Testing only
     var now = new Date();
     var nowMillis = now.getTime();
     if ((now.getHours() < milestone) && (new Date(nowMillis + delta).getHours() >= milestone)){
