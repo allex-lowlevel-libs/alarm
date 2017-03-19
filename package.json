@@ -1,6 +1,6 @@
 {
   "name": "allex_alarmlowlevellib",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Library that works as an alarm clock - execute some function on defined time",
   "main": "index.js",
   "scripts": {
