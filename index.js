@@ -30,6 +30,8 @@ function createAlarm(isArray,isFunction){
   };
 
   function checkTime(delta,milestone){
+    var errorRateFactor = 500; //500ms is error factor rate
+    delta += errorRateFactor;
     var now = new Date();
     var nowMillis = now.getTime();
     if ((now.getHours() < milestone) && (new Date(nowMillis + delta).getHours() >= milestone)){
